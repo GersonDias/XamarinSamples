@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DBApp.Pages.ContatoPage">
+  <ContentPage.Content>
+    <StackLayout Padding="30" Spacing="30">
+      <Entry Text="{Binding Name}" Placeholder="Nome"></Entry>
+      <Entry Text="{Binding Telefone}" Placeholder="Telefone" Keyboard="Telephone"></Entry>
+      <Entry Text="{Binding Email}" Placeholder="Email" Keyboard="Email"></Entry>
+      <Button Command="{Binding btnSalvar_Clicked}" Text="Salvar"></Button>
+
+      <ListView ItemsSource="{Binding Lista}"></ListView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

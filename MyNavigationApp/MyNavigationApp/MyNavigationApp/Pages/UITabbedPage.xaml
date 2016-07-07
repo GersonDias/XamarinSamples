@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage   xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="MyNavigationApp.Pages.UITabbedPage"
+              xmlns:me="clr-namespace:MyNavigationApp.Pages;assembly=MyNavigationApp">
+  <TabbedPage.Children>
+    <ContentPage BackgroundColor="Aqua" Title="Pagina1">
+      <ContentPage.Content>
+        <Button Text="Salvar" Clicked="OnClicked"></Button>
+      </ContentPage.Content>
+    </ContentPage>
+    <ContentPage BackgroundColor="Red" Title="Pagina2">
+      <ContentPage.Content>
+        <Label Text="Pagina2" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
+      </ContentPage.Content>
+    </ContentPage>
+    <ContentPage BackgroundColor="Blue" Title="Pagina3">
+      <ContentPage.Content>
+        <Label Text="Pagina3" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
+      </ContentPage.Content>
+    </ContentPage>
+    <me:Page4 />
+  </TabbedPage.Children>
+  
+</TabbedPage>
