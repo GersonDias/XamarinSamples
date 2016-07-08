@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CellListViewApp.Pages.ImageCell">
-  <ContentPage.Content>
-    <ListView ItemsSource="{Binding Items}">
+             x:Class="CellListViewApp.Pages.ImageCell" Title="ImageCell">
+  	<ContentPage.Content>
+    <ListView ItemsSource="{Binding Discos}" ItemTapped="Disco_Tapped">
       <ListView.ItemTemplate>
-        <DataTemplate>
-          <TextCell Text="{Binding Text}" Description="{Binding Description}">
-            <TextCell.ContextAction>
-              <MenuItem Text="Mais" Command="Item_Clicked" CommandParameter="{Binding .}"></MenuItem>
-              <MenuItem Text="Delete" Command="Item_Clicked" CommandParameter="{Binding .}" IsDestructive="True"></MenuItem>
-            </TextCell.ContextAction>
-          </TextCell>
+	    <DataTemplate>
+          <ImageCell Text="{Binding Title}" Detail="{Binding Description}" ImageSource="{Binding Image}">			
+            <ImageCell.ContextActions>
+              <MenuItem Text="Mais" Clicked="MenuItem_Clicked" CommandParameter="{Binding .}"></MenuItem>
+              <MenuItem Text="Delete" Clicked="MenuItem_Clicked" CommandParameter="{Binding .}" IsDestructive="True"></MenuItem>
+            </ImageCell.ContextActions>			
+          </ImageCell>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>

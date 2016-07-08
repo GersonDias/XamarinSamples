@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CellListViewApp.Pages.TextCell">
-  <ContentPage.Content>
-    <ListView ItemsSource="{Binding Discos}">
+             x:Class="CellListViewApp.Pages.TextCell" Padding="0,20,0,0" Title="TextCell">
+  	<ContentPage.Content>
+    <ListView ItemsSource="{Binding Discos}" ItemTapped="Disco_Tapped">
       <ListView.ItemTemplate>
-        <DataTemplate>
-          <TextCell Text="{Binding Title}" Detail="{Binding Description}">
+	    <DataTemplate>
+          <TextCell Text="{Binding Title}" Detail="{Binding Description}">			
             <TextCell.ContextActions>
-              <MenuItem Text="Mais" Clicked="Item_Click" CommandParameter="{Binding .}"></MenuItem>
-              <MenuItem Text="Delete" Clicked="Item_Click" CommandParameter="{Binding .}" IsDestructive="True"></MenuItem>
-            </TextCell.ContextActions>
+              <MenuItem Text="Mais" Clicked="MenuItem_Clicked" CommandParameter="{Binding .}"></MenuItem>
+              <MenuItem Text="Delete" Clicked="MenuItem_Clicked" CommandParameter="{Binding .}" IsDestructive="True"></MenuItem>
+            </TextCell.ContextActions>			
           </TextCell>
         </DataTemplate>
       </ListView.ItemTemplate>

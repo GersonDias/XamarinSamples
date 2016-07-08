@@ -17,14 +17,19 @@ namespace CellListViewApp.Pages
         {
             InitializeComponent();
 
-            _viewModel = new MainViewModel(this);
+			_viewModel = new MainViewModel(this);
 
             BindingContext = _viewModel;
         }
 
-        public void Item_Click(object sender, EventArgs e)
+        public void MenuItem_Clicked(object sender, EventArgs e)
         {
-            _viewModel.Item_Clicked((MenuItem)sender);
+            _viewModel.MenuItem_Clicked((MenuItem)sender);
         }
-    }
+
+		public void Disco_Tapped(object sender, Xamarin.Forms.ItemTappedEventArgs e)
+		{
+			_viewModel.Disco_Clicked((Model.Disco)((ListView)sender).SelectedItem);
+		}
+	}
 }

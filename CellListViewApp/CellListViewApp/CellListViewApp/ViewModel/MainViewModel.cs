@@ -20,22 +20,31 @@ namespace CellListViewApp.ViewModel
             get; set;
         }
 
-        public void Item_Clicked(MenuItem menuItem)
+        public void MenuItem_Clicked(MenuItem menuItem)
         {
-                var disco = menuItem?.CommandParameter as Disco;
+	        var disco = menuItem?.CommandParameter as Disco;
 
-                if (disco != null)
-                {
-                    if (menuItem.IsDestructive)
-                    {
-                        Discos.Remove(disco);
-                    }
-                    else
-                    {
-                        _page.DisplayAlert(disco.Title, disco.Description, "OK");
-                    }
-                }
+	        if (disco != null)
+	        {
+	            if (menuItem.IsDestructive)
+	            {
+	                Discos.Remove(disco);
+	            }
+	            else
+	            {
+	                _page.DisplayAlert(disco.Title, disco.Description, "OK");
+	            }
+	        }
         }
+
+		public async void Disco_Clicked(Disco disco)
+		{
+			if (disco != null)
+			{
+				var detailsPage = new DetailsPage(disco.Description);
+				await _page.Navigation.PushAsync(detailsPage);
+			}
+		}
 
         public MainViewModel(ContentPage page)
         {

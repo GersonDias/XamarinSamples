@@ -4,10 +4,11 @@
              x:Class="CellListViewApp.MainPage"
              xmlns:me="clr-namespace:CellListViewApp.Pages;assembly=CellListViewApp">
   <TabbedPage.Children>
-    <me:TextCell />
-    <!--<me:ImageCell />
-    <me:SwitchCell />
+  	<me:TextCell />
+    <me:ImageCell />
+    <!--<me:SwitchCell />
     <me:EntryCell />
     <me:CustomCell />-->
-  </TabbedPage.Children>
+    </TabbedPage.Children>
+	
 </TabbedPage>
